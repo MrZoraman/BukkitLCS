@@ -1,0 +1,6 @@
+name: ${project.artifactId}
+version: ${project.version}
+author: MrZoraman
+main: ${project.groupId}.bukkitlcs.BukkitLCSPlugin
+description: ${project.description}
+prefix: LCS

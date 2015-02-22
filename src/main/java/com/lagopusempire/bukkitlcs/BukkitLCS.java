@@ -14,9 +14,14 @@ public class BukkitLCS implements CommandExecutor
 {
     private final CommandSystem<IBukkitLCSCommand> lcs = new CommandSystem<>();
     
-    public void registerCommand(String syntax, IBukkitLCSCommand command)
+    public boolean registerCommand(String syntax, IBukkitLCSCommand command)
     {
-        lcs.registerCommand(syntax, command);
+        return lcs.registerCommand(syntax, command);
+    }
+    
+    public void setSafeParsingMode(boolean mode)
+    {
+        lcs.setSafeParsingMode(mode);
     }
     
     @Override
