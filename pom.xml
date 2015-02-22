@@ -84,8 +84,7 @@
                                     <include>com.lagopusempire:LagopusCommandSystem:*:*</include>
                                 </includes>
                             </artifactSet>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>shaded</shadedClassifierName>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
                         </configuration>
                     </execution>
                 </executions>
