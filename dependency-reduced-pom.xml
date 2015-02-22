@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.lagopusempire</groupId>
+  <artifactId>BukkitLCS</artifactId>
+  <name>Bukkit LCS</name>
+  <version>0.1</version>
+  <description>Lagopus Command System to Bukkit/Spigot connector</description>
+  <inceptionYear>2012</inceptionYear>
+  <developers>
+    <developer>
+      <name>MrZoraman</name>
+      <email>MrZoraman@Gmail.com</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>ISC License</name>
+      <url>http://choosealicense.com/licenses/isc/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <organization>
+    <name>Lagopus Empire</name>
+    <url>lagopusempire.com</url>
+  </organization>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <excludes>
+                  <exclude>org.bukkit:*:*:*</exclude>
+                </excludes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <id>Lagopus Empire Repo</id>
+      <name>Lagopus Empire Repo-releases</name>
+      <url>http://repo.lagopusempire.com/artifactory/lagopus-empire-repo</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>1.8-R0.1-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>lago-repo</id>
+      <name>Lagopus Empire Repo-releases</name>
+      <url>http://repo.lagopusempire.com/artifactory/lagopus-empire-repo</url>
+    </repository>
+  </distributionManagement>
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+</project>
+
