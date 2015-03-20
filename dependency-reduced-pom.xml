@@ -76,7 +76,7 @@
       <artifactId>bukkit</artifactId>
       <version>1.8-R0.1-SNAPSHOT</version>
       <scope>system</scope>
-      <systemPath>D:\Programming\Java\netbeans\BukkitLCS/lib/bukkit-1.8-R0.1-SNAPSHOT-b5.jar</systemPath>
+      <systemPath>${basedir}/lib/bukkit-1.8-R0.1-SNAPSHOT-b5.jar</systemPath>
     </dependency>
   </dependencies>
   <distributionManagement>
