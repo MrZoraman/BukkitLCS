@@ -14,28 +14,23 @@ public class BukkitLCS implements CommandExecutor
 {
     private final CommandSystem<IBukkitLCSCommand> lcs = new CommandSystem<>();
     
-    public boolean registerCommand(String syntax, IBukkitLCSCommand command)
+    public void registerCommand(String syntax, IBukkitLCSCommand command)
     {
-        return lcs.registerCommand(syntax, command);
-    }
-    
-    public void setSafeParsingMode(boolean mode)
-    {
-        lcs.setSafeParsingMode(mode);
+        lcs.registerCommand(syntax, command);
     }
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args)
     {
-        StringBuilder builder = new StringBuilder(256);
+        final StringBuilder builder = new StringBuilder(256);
         builder.append(cmd.getName()).append(" ");
         for(int ii = 0; ii < args.length; ii++)
         {
             builder.append(args[ii]).append(" ");
         }
-        String input = builder.toString();
+        final String input = builder.toString();
         
-        CommandResult<IBukkitLCSCommand> result = lcs.getCommand(input);
+        final CommandResult<IBukkitLCSCommand> result = lcs.getCommand(input);
         if(result.command == null) return false;
         return result.command.onCommand(sender, cmd, alias, result.preArgs, result.args);
     }
